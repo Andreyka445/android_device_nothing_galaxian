@@ -14,6 +14,7 @@ namespace_imports = [
     'vendor/nothing/galaxian',
     'hardware/nothing',
     'hardware/mediatek',
+    'hardware/mediatek/libaedv',
 ]
 
 
