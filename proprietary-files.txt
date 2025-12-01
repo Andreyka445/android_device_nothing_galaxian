@@ -179,6 +179,7 @@ vendor/lib64/mt6878/libcameracustom.camera_calibration.core.so:vendor/lib64/libc
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/mt6878/lib3a.af.assist.utils.so:vendor/lib64/lib3a.af.assist.utils.so
+
 #Cfg
 vendor/lib64/mt6878/libcam.hal3a.log.so:vendor/lib64/libcam.hal3a.log.so
 vendor/lib64/mt6878/libcameracustom.cfg_setting.core.so:vendor/lib64/libcameracustom.cfg_setting.core.so
@@ -320,6 +321,7 @@ vendor/lib64/mt6878/libpqparamparser.so:vendor/lib64/libpqparamparser.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
 vendor/lib64/libcamalgo.dngop.so
 vendor/lib64/mt6878/libfeature.face.so:vendor/lib64/libfeature.face.so
+
 # Audio configs
 system/etc/audio_effects.conf:system/etc/audio_effects.conf
 system_ext/etc/a2dp_audio_policy_configuration.xml:system_ext/etc/a2dp_audio_policy_configuration.xml
@@ -749,6 +751,9 @@ vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint.so:vendor/lib64/li
 
 # Gatekeeper
 
+# Keymint
+vendor/lib64/android.hardware.security.keymint-V3-ndk.so:vendor/lib64/android.hardware.security.keymint-V3-ndk-v34.so;FIX_SONAME
+
 # GNSS
 vendor/etc/init/mtk_agpsd_p.rc:vendor/etc/init/mtk_agpsd_p.rc
 vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.default.so
@@ -759,31 +764,106 @@ vendor/lib64/libmtkproperty.so:vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so:vendor/lib64/libmtkrillog.so
 vendor/lib64/libtrm.so:vendor/lib64/libtrm.so
 
-# GNSS configs
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_DoCoMo.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_DoCoMo.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_RAKUTEN.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_RAKUTEN.xml
-#vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Rakuten.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml:vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
-vendor/etc/gnss/agps_profiles_conf2.xml:vendor/etc/gnss/agps_profiles_conf2.xml
+# GNSS (Configs)
+vendor/etc/gnss/agps_profiles_conf2.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_DoCoMo.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_RAKUTEN.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Rakuten.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
+vendor/etc/MNL_Config.xml
+vendor/etc/slp_conf
 
-# Health
-vendor/etc/init/fuelgauged_init.rc:vendor/etc/init/fuelgauged_init.rc
+# Graphics
+vendor/bin/hw/android.hardware.graphics.composer@3.2-service
+vendor/bin/hw/mt6878/android.hardware.graphics.allocator-V2-service-mediatek.mt6878;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
+vendor/bin/hw/mt6878/arm.mali.platform-service.mediatek.mt6878;SYMLINK=vendor/bin/hw/arm.mali.platform-service.mediatek
+vendor/lib64/hw/mt6878/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
+vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
+vendor/etc/gralloc/cam.xml
+vendor/etc/gralloc/dpu.xml
+vendor/etc/gralloc/dpu_aeu.xml
+vendor/etc/gralloc/gpu.xml
+vendor/etc/gralloc/vpu.xml
+vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
+vendor/etc/init/android.hardware.graphics.composer@3.2-service.rc
+vendor/etc/init/arm.mali.platform-mediatek.rc
+vendor/etc/init/gpuserv-default.rc
+vendor/etc/vintf/manifest/arm.mali.platform-mediatek.xml
+vendor/etc/vintf/manifest/manifest_allocator.xml
+vendor/etc/vintf/manifest/manifest_hwcomposer.xml
+vendor/etc/vintf/manifest/mapper.mediatek.xml
+vendor/etc/meow.cfg
+vendor/etc/bh3.dla
+vendor/etc/genshin.dla
+vendor/etc/mali_platform.config
+vendor/firmware/mali_csffw.bin
+vendor/lib64/egl/libGLES_meow.so
+vendor/lib64/egl/libMEOW_data.so
+vendor/lib64/egl/libMEOW_gift.so
+vendor/lib64/egl/libMEOW_qt.so
+vendor/lib64/egl/libMEOW_trace.so
+vendor/lib64/egl/mt6878/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
+vendor/lib64/hw/hwcomposer.mtk_common.so
+vendor/lib64/hw/mt6878/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
+vendor/lib64/hw/mt6878/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6878/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/libDefaultFpsActor.so
+vendor/lib64/libFrameRecord.so
+vendor/lib64/libNoFpsActor.so
+vendor/lib64/libcomposer_ext.so
+vendor/lib64/libged.so
+vendor/lib64/libgpu_aux.so
+vendor/lib64/libgpud.so
+vendor/lib64/libgralloc_extra.so
+vendor/lib64/libgralloc_metadata.so
+vendor/lib64/libgralloctypes_mtk.so
+vendor/lib64/libladder.so
+vendor/lib64/libappgamepq.so
+vendor/lib64/libmtkgpuserv.so
+vendor/lib64/libsilkybrightnesscore.so
+vendor/lib64/libmtkgpuservsdk_vendor.so
+vendor/lib64/mt6878/arm.graphics-V4-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V4-ndk.so
+vendor/lib64/mt6878/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.platform-V2-ndk.so
+vendor/lib64/mt6878/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so
+vendor/lib64/mt6878/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so
+vendor/lib64/mt6878/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so
+vendor/lib64/mt6878/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 
-# Light
+# IMS
+vendor/bin/hw/vtservice_aidl
+vendor/etc/init/init.vtservice_aidl.rc
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so
+vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 
-# Local time
-vendor/lib64/hw/local_time.default.so:vendor/lib64/hw/local_time.default.so
+# HotwordEnrollment
+product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
+product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
+
+# Kernel
+vendor/bin/init.insmod.sh
+vendor/etc/init.insmod.mt6878.cfg
+
+# Keymint
+vendor/bin/hw/android.hardware.security.keymint@3.0-service.trustonic
+vendor/etc/init/android.hardware.security.keymint@3.0-service.trustonic.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.trustonic.xml
+vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
 
 # Media
 system/etc/seccomp_policy/mediacodec.policy:system/etc/seccomp_policy/mediacodec.policy
@@ -919,27 +999,27 @@ odm/etc/sysconfig/sku_EEA/eea_v2_search_chrome.xml:odm/etc/sysconfig/sku_EEA/eea
 odm/etc/sysconfig/sku_IND/dse_choice_screen.xml:odm/etc/sysconfig/sku_IND/dse_choice_screen.xml
 odm/etc/sysconfig/sku_TUR/qsb_widget.xml:odm/etc/sysconfig/sku_TUR/qsb_widget.xml
 odm/etc/sysconfig/sku_TUR/tmada.xml:odm/etc/sysconfig/sku_TUR/tmada.xml
--odm/etc/vintf/manifest_EEA.xml:odm/etc/vintf/manifest_EEA.xml
--odm/etc/vintf/manifest_IND.xml:odm/etc/vintf/manifest_IND.xml
--odm/etc/vintf/manifest_JPN.xml:odm/etc/vintf/manifest_JPN.xml
--odm/etc/vintf/manifest_ROW.xml:odm/etc/vintf/manifest_ROW.xml
--odm/etc/vintf/manifest_TUR.xml:odm/etc/vintf/manifest_TUR.xml
+odm/etc/vintf/manifest_EEA.xml:odm/etc/vintf/manifest_EEA.xml
+odm/etc/vintf/manifest_IND.xml:odm/etc/vintf/manifest_IND.xml
+odm/etc/vintf/manifest_JPN.xml:odm/etc/vintf/manifest_JPN.xml
+odm/etc/vintf/manifest_ROW.xml:odm/etc/vintf/manifest_ROW.xml
+odm/etc/vintf/manifest_TUR.xml:odm/etc/vintf/manifest_TUR.xml
 odm/etc/build_EEA.prop:odm/etc/build_EEA.prop
 odm/etc/build_IND.prop:odm/etc/build_IND.prop
 odm/etc/build_JPN.prop:odm/etc/build_JPN.prop
 odm/etc/build_TUR.prop:odm/etc/build_TUR.prop
-#odm/overlayfs_origin/product/media/bootanimation.zip
-#odm/overlayfs_origin/system/noth/app/Facebook-Appmanager/facebook-appmanager.apk
-#odm/overlayfs_origin/system/noth/priv-app/Facebook-Installer/facebook-installer.apk
-#odm/overlayfs_origin/system/noth/priv-app/Facebook-Services/facebook-services.apk
-#odm/overlayfs_origin/system_ext/ldu/app/LiveDemo.apk
-#odm/overlayfs_origin/system_ext/meta/app/facebook.apk
-#odm/overlayfs_origin/system_ext/meta/app/instagram.apk
-#odm/overlayfs_origin/system_ext/noth/priv-app/FPS/FPS.apk
-#odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/Conf_MultipleTest_0x44.ini
-#odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/Conf_MultipleTest_0xda.ini
-#odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/FT_Terminal_Test_Galaga.apk
-#odm/overlayfs_origin/system_ext/noth/priv-app/GFLincoln/GFLincoln.apk
+odm/overlayfs_origin/product/media/bootanimation.zip
+odm/overlayfs_origin/system/noth/app/Facebook-Appmanager/facebook-appmanager.apk
+odm/overlayfs_origin/system/noth/priv-app/Facebook-Installer/facebook-installer.apk
+odm/overlayfs_origin/system/noth/priv-app/Facebook-Services/facebook-services.apk
+odm/overlayfs_origin/system_ext/ldu/app/LiveDemo.apk
+odm/overlayfs_origin/system_ext/meta/app/facebook.apk
+odm/overlayfs_origin/system_ext/meta/app/instagram.apk
+odm/overlayfs_origin/system_ext/noth/priv-app/FPS/FPS.apk
+odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/Conf_MultipleTest_0x44.ini
+odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/Conf_MultipleTest_0xda.ini
+odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/FT_Terminal_Test_Galaga.apk
+odm/overlayfs_origin/system_ext/noth/priv-app/GFLincoln/GFLincoln.apk
 vendor/app/NetworkStackGoogleGoResOverlay/NetworkStackGoogleGoResOverlay.apk:vendor/app/NetworkStackGoogleGoResOverlay/NetworkStackGoogleGoResOverlay.apk
 vendor/app/NetworkStackGoogleResOverlay/NetworkStackGoogleResOverlay.apk:vendor/app/NetworkStackGoogleResOverlay/NetworkStackGoogleResOverlay.apk
 vendor/app/NetworkStackResOverlay/NetworkStackResOverlay.apk:vendor/app/NetworkStackResOverlay/NetworkStackResOverlay.apk
