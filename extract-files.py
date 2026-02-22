@@ -14,7 +14,6 @@ namespace_imports = [
     'vendor/nothing/galaxian',
     'hardware/nothing',
     'hardware/mediatek',
-    'hardware/mediatek/libaedv',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):

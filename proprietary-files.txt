@@ -1,80 +1,15 @@
 	# Unpinned blobs from sys_mssi_64_64only_ww_armv82-user 15 AP3A.240905.015.A2 2510291642 release-keys
 
-# Camera Feature VRP (HDR & VSDOF)
-vendor/lib64/mt6878/libmtkcam_feature_utils.so:vendor/lib64/libmtkcam_feature_utils.so
-vendor/lib64/mt6878/libcamalgo.vsf.so:vendor/lib64/libcamalgo.vsf.so
-vendor/lib64/mt6878/libmtkcam_simager.so:vendor/lib64/libmtkcam_simager.so
-vendor/lib64/mt6878/libfeature.vsdof.hal.so:vendor/lib64/libfeature.vsdof.hal.so
-vendor/lib64/mt6878/libmtkcam.featurepipe.vsdof.wrapper.so:vendor/lib64/libmtkcam.featurepipe.vsdof.wrapper.so
-vendor/lib64/libfeature.hdr10.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
-vendor/lib64/libcamalgo.hdr10p.so
-vendor/lib64/libmtk-ril.so
-vendor/lib64/libmtkmipc-ril.so
+# AEE
+vendor/lib64/libaedv.so
 
-# MediaTek Location Based Services (GPS)
-vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so
-
-# MediaTek Audio Interface
-vendor/lib64/vendor.mediatek.hardware.audio-V1-ndk.so
-
-vendor/lib64/egl/mt6878/libGLES_mali.so:vendor/lib64/libGLES_mali.so
-
-vendor/lib64/mt6878/arm.mali.platform-V2-ndk.so:vendor/lib64/arm.mali.platform-V2-ndk.so
-# MediaTek APU & NeuroPilot Agent
-vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
-vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
-vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
-vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
-vendor/lib64/vendor.mediatek.hardware.neuropilot.agent-V1-ndk.so
-
-# Modem Monitoring Interface
-vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
-
-# RIL Core
-vendor/lib64/librilfusion.so
-
-# UI & Rasterization
-vendor/lib64/libpixelflinger.so
-
-# MediaTek PQ Config
-vendor/lib64/libpqconfig.so
-
-# MediaTek Mobile Multimedia Service (MMS) Chain
-vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
-
-# MediaTek Radio Extended (MTKRadioEx) AIDL Interfaces
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.modem-V2-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.data-V2-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.network-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.messaging-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.ims-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.assist-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.atci-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.cap-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.em-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.mwi-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.rsu-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.se-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.smartratswitch-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.rcs-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex.dch-V1-ndk.so
+# AAL
+vendor/lib64/mt6878/libaal_cust_func.so;SYMLINK=vendor/lib64/libaal_cust_func.so
+vendor/lib64/mt6878/libaalservice.so;SYMLINK=vendor/lib64/libaalservice.so
+vendor/lib64/libaal_key.so
+vendor/lib64/libaal_sec.so
 
 # Audio
-<<<<<<< HEAD
-vendor/lib64/hw/audio.primary.default.so:vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so:vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so
-vendor/lib64/libaedv.so:vendor/lib64/libaedv.so
-vendor/lib64/libaudiotoolkit_vendor.so:vendor/lib64/libaudiotoolkit_vendor.so
-vendor/lib64/libbwc.so:vendor/lib64/libbwc.so
-vendor/lib64/libladder.so:vendor/lib64/libladder.so
-=======
 vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6878.so
 vendor/lib64/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib64/hw/audio.r_submix.mt6878.so
 vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-stock.so;FIX_SONAME
@@ -120,7 +55,6 @@ vendor/lib64/libvow_ap_test_trip_nn.so
 vendor/lib64/libvow_comp_test.so
 vendor/lib64/vendor.mediatek.hardware.audio@8.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
->>>>>>> 0c69edb (Galaga: Configure IMS)
 
 # MediaTek Camera Features & Event Handling
 vendor/lib64/mt6878/libfeature.mcnr.so:vendor/lib64/libfeature.mcnr.so
