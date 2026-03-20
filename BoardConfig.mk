@@ -5,6 +5,7 @@
 
 DEVICE_PATH := device/nothing/galaxian
 TARGET_MODULES_DIR := $(DEVICE_PATH)/modules
+CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 # A/B
 AB_OTA_UPDATER := true
@@ -111,11 +112,11 @@ BOARD_ALPS_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 TARGET_BOARD_PLATFORM := mt6878
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_SYSTEM_PROP += $(CONFIGS_PATH)/properties/system.prop
+TARGET_SYSTEM_EXT_PROP += $(CONFIGS_PATH)/properties/system_ext.prop
+TARGET_PRODUCT_PROP += $(CONFIGS_PATH)/properties/product.prop
+TARGET_VENDOR_PROP += $(CONFIGS_PATH)/properties/vendor.prop
+TARGET_ODM_PROP += $(CONFIGS_PATH)/properties/odm.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.emmc
