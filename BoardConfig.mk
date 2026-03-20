@@ -4,6 +4,7 @@
 #
 
 DEVICE_PATH := device/nothing/galaxian
+TARGET_MODULES_DIR := $(DEVICE_PATH)/modules
 
 # A/B
 AB_OTA_UPDATER := true
@@ -19,7 +20,6 @@ AB_OTA_PARTITIONS += \
     vbmeta_vendor \
     product \
     vendor_dlkm
-BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -33,25 +33,52 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a55
 TARGET_BOOTLOADER_BOARD_NAME := Galaxian
 TARGET_NO_BOOTLOADER := true
 
+# Load vendor_dlkm modules
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_dlkm/, \
+    $(notdir $(BOARD_VENDOR_KERNEL_MODULES_LOAD))))
+
+# Load vendor_boot modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.vendor_boot))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_boot/, \
+    $(notdir $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))))
+
+# Load recovery modules (also from vendor_boot)
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.recovery))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES := $(addprefix $(TARGET_MODULES_DIR)/vendor_boot/, \
+    $(notdir $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)))
+
+# Append recovery modules if they're not already in vendor_boot
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(filter-out $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES), \
+    $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES))
+
 # Display
 TARGET_SCREEN_DENSITY := 420
 
 # Kernel
+BBOARD_KERNEL_BASE := 0x3FFF8000
+BOARD_PAGE_SIZE := 4096
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_RAMDISK_OFFSET := 0x26F08000
+BOARD_TAGS_OFFSET := 0x07C88000
 BOARD_BOOT_HEADER_VERSION := 4
-BOARD_KERNEL_BASE := 0x3fff8000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 log_buf_len=1M ignore_loglevel printk.devkmsg=on
+BOARD_DTB_SIZE := 340022
+BOARD_DTB_OFFSET := 0x07c88000
+BOARD_VENDOR_CMDLINE := bootopt=64S3,32N2,64N2
+
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE) --board ""
+BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 TARGET_KERNEL_SOURCE := kernel/nothing/galaxiawn
 TARGET_KERNEL_CONFIG := gki_defconfig 
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r487747c
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_LLVM_BINUTILS := true
-
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
-BOARD_MKBOOTIMG_ARGS += --board Galaxian
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -88,9 +115,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
-TARGET_SYSTEM_DLKM_PROP += $(DEVICE_PATH)/system_dlkm.prop
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_ODM_DLKM_PROP += $(DEVICE_PATH)/odm_dlkm.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.emmc
@@ -121,6 +146,15 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
+# Confing vendorboot
+BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_USES_GENERIC_KERNEL_IMAGE := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE :=
+BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT :=
+TW_LOAD_VENDOR_BOOT_MODULES := true
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 
 # Inherit the proprietary files
 include vendor/nothing/galaxian/BoardConfigVendor.mk
