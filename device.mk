@@ -17,6 +17,22 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl.recovery \
     android.hardware.boot@1.2-service
 
+# NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    Tag
+
+# Audio
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
+PRODUCT_PACKAGES += \
+    DisplayCutoutEmulationHoleGalaxian \
+    NavigationBarModeGesturalOverlayGalaxian \
+    TransparentNavigationBarOverlayGalaxian \
+    WifiSystemResMainlineOverlayGalaxian \
+    WifiSystemResOverlayGalaxian 
+
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -56,8 +72,6 @@ PRODUCT_ENABLE_UFFD_GC := true
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
 PRODUCT_NO_ADB_CONFIRMATION := true
 
-# Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -67,42 +81,15 @@ PRODUCT_CHARACTERISTICS := default
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.insmod.sh \
-    init.mt6878.rc \
-    init.mt6878.usb.rc \
     fstab.emmc
 
-# Копируем fstab в ramdisk для первой стадии монтирования
+# Fstab
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.emmc \
     $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
 
 PRODUCT_PACKAGES += \
-    fstab.emmc \
-    factory_init.connectivity.common.rc \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
-    init.aee.rc \
-    init.board_id.rc \
-    init.cgroup.rc \
-    init.connectivity.common.rc \
-    init.connectivity.rc \
-    init.modem.rc \
-    init.mt6878.rc \
-    init.mt6878.usb.rc \
-    init.mtkgki.rc \
-    init.project.rc \
-    init.pstore.rc \
-    init.sensor_2_0.rc \
-    init_conninfra.rc \
-    meta_init.connectivity.common.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc \
-    meta_init.vendor.rc \
-    multi_init.rc \
+    fstab.emmc 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
