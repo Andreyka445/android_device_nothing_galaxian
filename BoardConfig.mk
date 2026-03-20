@@ -80,7 +80,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
-TARGET_KERNEL_SOURCE := kernel/nothing/galaxiawn
+TARGET_KERNEL_SOURCE := kernel/nothing/galaxian
 TARGET_KERNEL_CONFIG := gki_defconfig 
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r487747c
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
