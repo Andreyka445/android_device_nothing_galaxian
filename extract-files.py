@@ -12,12 +12,15 @@ from extract_utils.main import (
 namespace_imports = [
     'device/nothing/galaxian',
     'vendor/nothing/galaxian',
+    'hardware/nothing',
+    'hardware/mediatek',
 ]
 
 module = ExtractUtilsModule(
     'galaxian',
     'nothing',
     namespace_imports=namespace_imports,
+    add_firmware_proprietary_file=True,
 )
 
 if __name__ == '__main__':
