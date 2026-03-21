@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.android.internal.systemui.navbar.transparent" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <overlay android:priority="1" android:targetPackage="android"/>
+    <application android:extractNativeLibs="true" android:hasCode="false" android:label="@string/transparent_navigation_bar_title"/>
+</manifest>

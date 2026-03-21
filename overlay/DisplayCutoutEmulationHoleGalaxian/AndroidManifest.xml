@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.android.internal.display.cutout.emulation.hole" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <overlay android:category="com.android.internal.display_cutout_emulation" android:priority="1" android:targetPackage="android"/>
+    <application android:extractNativeLibs="true" android:hasCode="false" android:label="@string/display_cutout_emulation_overlay"/>
+</manifest>
