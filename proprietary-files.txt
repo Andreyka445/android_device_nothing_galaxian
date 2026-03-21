@@ -208,9 +208,9 @@ vendor/lib64/mt6878/libaicapturecore.so:vendor/lib64/mt6878/libaicapturecore.so
 vendor/lib64/mt6878/libaiseg_cache.so:vendor/lib64/mt6878/libaiseg_cache.so
 vendor/lib64/mt6878/libaiseg_p1ggm.so:vendor/lib64/mt6878/libaiseg_p1ggm.so
 vendor/lib64/mt6878/libaiseg_sun.so:vendor/lib64/mt6878/libaiseg_sun.so
-vendor/lib64/mt6878/libaiselector.so:vendor/lib64/mt6878/libaiselector.so
+# vendor/lib64/mt6878/libaiselector.so:vendor/lib64/mt6878/libaiselector.so
 vendor/lib64/mt6878/libalgo.aosp.log.so:vendor/lib64/mt6878/libalgo.aosp.log.so
-vendor/lib64/mt6878/libapiwrapper.so:vendor/lib64/mt6878/libapiwrapper.so
+# vendor/lib64/mt6878/libapiwrapper.so:vendor/lib64/mt6878/libapiwrapper.so
 vendor/lib64/mt6878/libapudcutils.so:vendor/lib64/mt6878/libapudcutils.so
 vendor/lib64/mt6878/libcam.3a_isp.utils.so:vendor/lib64/mt6878/libcam.3a_isp.utils.so
 vendor/lib64/mt6878/libcam_ipc_hal3a_client.so:vendor/lib64/mt6878/libcam_ipc_hal3a_client.so
@@ -218,8 +218,8 @@ vendor/lib64/mt6878/libcam_ipc_nvbuf_client.so:vendor/lib64/mt6878/libcam_ipc_nv
 vendor/lib64/mt6878/libcam_nothing.so:vendor/lib64/mt6878/libcam_nothing.so
 vendor/lib64/mt6878/libcamalgo.BSSwrapper.so:vendor/lib64/mt6878/libcamalgo.BSSwrapper.so
 vendor/lib64/mt6878/libcamera.custom.af_assist_buf_mgr.so:vendor/lib64/mt6878/libcamera.custom.af_assist_buf_mgr.so
-vendor/lib64/mt6878/libcameracustom.camera.3a.so:vendor/lib64/mt6878/libcameracustom.camera.3a.so
-vendor/lib64/mt6878/libcameracustom_camera_db_ext.so:vendor/lib64/mt6878/libcameracustom_camera_db_ext.so
+# vendor/lib64/mt6878/libcameracustom.camera.3a.so:vendor/lib64/mt6878/libcameracustom.camera.3a.so
+# vendor/lib64/mt6878/libcameracustom_camera_db_ext.so:vendor/lib64/mt6878/libcameracustom_camera_db_ext.so
 vendor/lib64/mt6878/libdpframework.so:vendor/lib64/mt6878/libdpframework.so
 vendor/lib64/mt6878/libeffecthal.base.so:vendor/lib64/mt6878/libeffecthal.base.so
 vendor/lib64/mt6878/libfacerelight.so:vendor/lib64/mt6878/libfacerelight.so
@@ -227,15 +227,15 @@ vendor/lib64/mt6878/libfeature.aiseg.so:vendor/lib64/mt6878/libfeature.aiseg.so
 vendor/lib64/mt6878/libfeature_eis.so:vendor/lib64/mt6878/libfeature_eis.so
 vendor/lib64/mt6878/libfeature_fsc.so:vendor/lib64/mt6878/libfeature_fsc.so
 vendor/lib64/mt6878/libfeature_vrp.so:vendor/lib64/mt6878/libfeature_vrp.so
-vendor/lib64/mt6878/libfeatureiodrv_mem.so:vendor/lib64/mt6878/libfeatureiodrv_mem.so
+# vendor/lib64/mt6878/libfeatureiodrv_mem.so:vendor/lib64/mt6878/libfeatureiodrv_mem.so
 vendor/lib64/mt6878/libfeaturepolicy_dbhandler.so:vendor/lib64/mt6878/libfeaturepolicy_dbhandler.so
 vendor/lib64/mt6878/libimgstream-custom.so:vendor/lib64/mt6878/libimgstream-custom.so
 vendor/lib64/mt6878/libimgstream-drv.so:vendor/lib64/mt6878/libimgstream-drv.so
 vendor/lib64/mt6878/libimgstream-guard.so:vendor/lib64/mt6878/libimgstream-guard.so
-vendor/lib64/mt6878/libimgsys_cmt.so:vendor/lib64/mt6878/libimgsys_cmt.so
-vendor/lib64/mt6878/libimgsys_main.so:vendor/lib64/mt6878/libimgsys_main.so
-vendor/lib64/mt6878/libimgsys_sensor.so:vendor/lib64/mt6878/libimgsys_sensor.so
-vendor/lib64/mt6878/libimgsys_v4l2.so:vendor/lib64/mt6878/libimgsys_v4l2.so
+# vendor/lib64/mt6878/libimgsys_cmt.so:vendor/lib64/mt6878/libimgsys_cmt.so
+# vendor/lib64/mt6878/libimgsys_main.so:vendor/lib64/mt6878/libimgsys_main.so
+# vendor/lib64/mt6878/libimgsys_sensor.so:vendor/lib64/mt6878/libimgsys_sensor.so
+# vendor/lib64/mt6878/libimgsys_v4l2.so:vendor/lib64/mt6878/libimgsys_v4l2.so
 vendor/lib64/mt6878/libispfeature_mtkcam.v4l2.so:vendor/lib64/mt6878/libispfeature_mtkcam.v4l2.so
 vendor/lib64/mt6878/libispinterpreter_mtkcam.so:vendor/lib64/mt6878/libispinterpreter_mtkcam.so
 vendor/lib64/mt6878/liblpnr.so:vendor/lib64/mt6878/liblpnr.so
@@ -245,7 +245,7 @@ vendor/lib64/mt6878/libmml.so:vendor/lib64/mt6878/libmml.so
 vendor/lib64/mt6878/libmorpho_RawDeepDenoise.so:vendor/lib64/mt6878/libmorpho_RawDeepDenoise.so
 vendor/lib64/mt6878/libmorpho_video_stabilizer.so:vendor/lib64/mt6878/libmorpho_video_stabilizer.so
 vendor/lib64/mt6878/libmtk_drvb.so:vendor/lib64/mt6878/libmtk_drvb.so
-vendor/lib64/mt6878/libmtkcm_ipc_dummy.so:vendor/lib64/mt6878/libmtkcm_ipc_dummy.so
+#vendor/lib64/mt6878/libmtkcm_ipc_dummy.so:vendor/lib64/mt6878/libmtkcm_ipc_dummy.so
 vendor/lib64/mt6878/libmtkltm.so:vendor/lib64/mt6878/libmtkltm.so
 vendor/lib64/mt6878/libneuron_adapter_mc.so:vendor/lib64/mt6878/libneuron_adapter_mc.so
 vendor/lib64/mt6878/libneuron_wrapper.so:vendor/lib64/mt6878/libneuron_wrapper.so
@@ -300,7 +300,7 @@ vendor/lib64/libged.so:vendor/lib64/libged.so
 vendor/lib64/libgralloc_extra.so:vendor/lib64/libgralloc_extra.so
 vendor/lib64/libheichal.so:vendor/lib64/libheichal.so
 vendor/lib64/libhfmanager.so:vendor/lib64/libhfmanager.so
-vendor/lib64/libimagebuffer_wrapper.so:vendor/lib64/libimagebuffer_wrapper.so
+# vendor/lib64/libimagebuffer_wrapper.so:vendor/lib64/libimagebuffer_wrapper.so
 vendor/lib64/libjni_rater_api.so:vendor/lib64/libjni_rater_api.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so:vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so:vendor/lib64/libjpeg-alpha_vendor.so
@@ -497,22 +497,22 @@ vendor/etc/media_profiles_V1_0.xml:vendor/etc/media_profiles_V1_0.xml
 vendor/lib64/mt6878/libmmagent.so:vendor/lib64/mt6878/libmmagent.so
 
 # NFC
-vendor/lib64/7816-3-T1.so:vendor/lib64/7816-3-T1.so
-vendor/lib64/nfc_nci.thn31nfc.tms.so:vendor/lib64/nfc_nci.thn31nfc.tms.so
-vendor/lib64/nfc_nci_nxp_snxxx.so:vendor/lib64/nfc_nci_nxp_snxxx.so
-vendor/lib64/tms-cos-dl-common.so:vendor/lib64/tms-cos-dl-common.so
-vendor/lib64/tms-cos-dl-ree.so:vendor/lib64/tms-cos-dl-ree.so
-vendor/lib64/tms-utils.so:vendor/lib64/tms-utils.so
+# vendor/lib64/7816-3-T1.so:vendor/lib64/7816-3-T1.so
+# vendor/lib64/nfc_nci.thn31nfc.tms.so:vendor/lib64/nfc_nci.thn31nfc.tms.so
+# vendor/lib64/nfc_nci_nxp_snxxx.so:vendor/lib64/nfc_nci_nxp_snxxx.so
+# vendor/lib64/tms-cos-dl-common.so:vendor/lib64/tms-cos-dl-common.so
+# vendor/lib64/tms-cos-dl-ree.so:vendor/lib64/tms-cos-dl-ree.so
+# vendor/lib64/tms-utils.so:vendor/lib64/tms-utils.so
 
 # NFC configs
-system/etc/libnfc-nci.conf:system/etc/libnfc-nci.conf
-vendor/etc/libnfc-nxp-pnscr.conf:vendor/etc/libnfc-nxp-pnscr.conf
-vendor/etc/libnfc-nxp.conf:vendor/etc/libnfc-nxp.conf
-vendor/etc/libnfc-tms.conf:vendor/etc/libnfc-tms.conf
-vendor/etc/libnfc-tms_RF.conf:vendor/etc/libnfc-tms_RF.conf
-vendor/etc/libnfc-tms_RF_EC2.conf:vendor/etc/libnfc-tms_RF_EC2.conf
-vendor/etc/libnfc-tms_RF_GB1.conf:vendor/etc/libnfc-tms_RF_GB1.conf
-vendor/etc/sn100u_pnx_ese_cplc.pnscr:vendor/etc/sn100u_pnx_ese_cplc.pnscr
+# system/etc/libnfc-nci.conf:system/etc/libnfc-nci.conf
+# vendor/etc/libnfc-nxp-pnscr.conf:vendor/etc/libnfc-nxp-pnscr.conf
+# vendor/etc/libnfc-nxp.conf:vendor/etc/libnfc-nxp.conf
+# vendor/etc/libnfc-tms.conf:vendor/etc/libnfc-tms.conf
+# vendor/etc/libnfc-tms_RF.conf:vendor/etc/libnfc-tms_RF.conf
+# vendor/etc/libnfc-tms_RF_EC2.conf:vendor/etc/libnfc-tms_RF_EC2.conf
+# vendor/etc/libnfc-tms_RF_GB1.conf:vendor/etc/libnfc-tms_RF_GB1.conf
+# vendor/etc/sn100u_pnx_ese_cplc.pnscr:vendor/etc/sn100u_pnx_ese_cplc.pnscr
 
 # NVRAM
 vendor/etc/init/fuelgauged_nvram_init.rc:vendor/etc/init/fuelgauged_nvram_init.rc
@@ -535,7 +535,7 @@ vendor/lib64/libmtkhardware_legacy.so:vendor/lib64/libmtkhardware_legacy.so
 vendor/lib64/libmtkrilutils.so:vendor/lib64/libmtkrilutils.so
 vendor/lib64/libmtkutils.so:vendor/lib64/libmtkutils.so
 vendor/lib64/libratconfig.so:vendor/lib64/libratconfig.so
-vendor/lib64/librilfusion.so:vendor/lib64/librilfusion.so
+##vendor/lib64/librilfusion.so:vendor/lib64/librilfusion.so
 vendor/lib64/libstorage_otp.so:vendor/lib64/libstorage_otp.so
 vendor/lib64/libsysenv.so:vendor/lib64/libsysenv.so
 
@@ -1670,21 +1670,21 @@ vendor/lib64/mt6878/libarm_gralloc_properties_sysprop.so:vendor/lib64/mt6878/lib
 vendor/lib64/mt6878/libarm_mali_config_sysprops.so:vendor/lib64/mt6878/libarm_mali_config_sysprops.so
 vendor/lib64/mt6878/libccd.so:vendor/lib64/mt6878/libccd.so
 vendor/lib64/mt6878/libgpudataproducer.so:vendor/lib64/mt6878/libgpudataproducer.so
-vendor/lib64/mt6878/libimgsys_adl.so:vendor/lib64/mt6878/libimgsys_adl.so
-vendor/lib64/mt6878/libimgsys_custom.so:vendor/lib64/mt6878/libimgsys_custom.so
-vendor/lib64/mt6878/libimgsys_daemon.so:vendor/lib64/mt6878/libimgsys_daemon.so
-vendor/lib64/mt6878/libimgsys_dip.so:vendor/lib64/mt6878/libimgsys_dip.so
-vendor/lib64/mt6878/libimgsys_drvcommon.so:vendor/lib64/mt6878/libimgsys_drvcommon.so
-vendor/lib64/mt6878/libimgsys_gce.so:vendor/lib64/mt6878/libimgsys_gce.so
-vendor/lib64/mt6878/libimgsys_me.so:vendor/lib64/mt6878/libimgsys_me.so
-vendor/lib64/mt6878/libimgsys_pqdip.so:vendor/lib64/mt6878/libimgsys_pqdip.so
-vendor/lib64/mt6878/libimgsys_system.so:vendor/lib64/mt6878/libimgsys_system.so
-vendor/lib64/mt6878/libimgsys_taskhandler.so:vendor/lib64/mt6878/libimgsys_taskhandler.so
-vendor/lib64/mt6878/libimgsys_tdrhal.so:vendor/lib64/mt6878/libimgsys_tdrhal.so
-vendor/lib64/mt6878/libimgsys_tile.so:vendor/lib64/mt6878/libimgsys_tile.so
-vendor/lib64/mt6878/libimgsys_traw.so:vendor/lib64/mt6878/libimgsys_traw.so
-vendor/lib64/mt6878/libimgsys_utils.so:vendor/lib64/mt6878/libimgsys_utils.so
-vendor/lib64/mt6878/libimgsys_wpe.so:vendor/lib64/mt6878/libimgsys_wpe.so
+# vendor/lib64/mt6878/libimgsys_adl.so:vendor/lib64/mt6878/libimgsys_adl.so
+# vendor/lib64/mt6878/libimgsys_custom.so:vendor/lib64/mt6878/libimgsys_custom.so
+# vendor/lib64/mt6878/libimgsys_daemon.so:vendor/lib64/mt6878/libimgsys_daemon.so
+# vendor/lib64/mt6878/libimgsys_dip.so:vendor/lib64/mt6878/libimgsys_dip.so
+# vendor/lib64/mt6878/libimgsys_drvcommon.so:vendor/lib64/mt6878/libimgsys_drvcommon.so
+# vendor/lib64/mt6878/libimgsys_gce.so:vendor/lib64/mt6878/libimgsys_gce.so
+# vendor/lib64/mt6878/libimgsys_me.so:vendor/lib64/mt6878/libimgsys_me.so
+# vendor/lib64/mt6878/libimgsys_pqdip.so:vendor/lib64/mt6878/libimgsys_pqdip.so
+# vendor/lib64/mt6878/libimgsys_system.so:vendor/lib64/mt6878/libimgsys_system.so
+# vendor/lib64/mt6878/libimgsys_taskhandler.so:vendor/lib64/mt6878/libimgsys_taskhandler.so
+# vendor/lib64/mt6878/libimgsys_tdrhal.so:vendor/lib64/mt6878/libimgsys_tdrhal.so
+# vendor/lib64/mt6878/libimgsys_tile.so:so/lib64/mt6878/libimgsys_tile.so
+# vendor/lib64/mt6878/libimgsys_traw.so:vendor/lib64/mt6878/libimgsys_traw.so
+# vendor/lib64/mt6878/libimgsys_utils.so:vendor/lib64/mt6878/libimgsys_utils.so
+# vendor/lib64/mt6878/libimgsys_wpe.so:vendor/lib64/mt6878/libimgsys_wpe.so
 vendor/lib64/mt6878/libmmlpqImpl.so:vendor/lib64/mt6878/libmmlpqImpl.so
 vendor/lib64/mt6878/libneuron_adapter_mgvi.so:vendor/lib64/mt6878/libneuron_adapter_mgvi.so
 vendor/lib64/mt6878/libneuron_runtime.7.so:vendor/lib64/mt6878/libneuron_runtime.7.so
@@ -1773,13 +1773,13 @@ vendor/lib64/libmmprofile.so:vendor/lib64/libmmprofile.so
 vendor/lib64/libmnetlink_v104.so:vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmp3dec_mtk.so:vendor/lib64/libmp3dec_mtk.so
 vendor/lib64/libmsbc_mtk.so:vendor/lib64/libmsbc_mtk.so
-vendor/lib64/libmtk-ril.so:vendor/lib64/libmtk-ril.so
-vendor/lib64/libmtk-rilop.so:vendor/lib64/libmtk-rilop.so
+#vendor/lib64/libmtk-ril.so:vendor/lib64/libmtk-ril.so
+#vendor/lib64/libmtk-rilop.so:vendor/lib64/libmtk-rilop.so
 vendor/lib64/libmtkgpuserv.so:vendor/lib64/libmtkgpuserv.so
 vendor/lib64/libmtkgpuservsdk_vendor.so:vendor/lib64/libmtkgpuservsdk_vendor.so
 vendor/lib64/libmtklimiter_vendor.so:vendor/lib64/libmtklimiter_vendor.so
-vendor/lib64/libmtkmipc-ril.so:vendor/lib64/libmtkmipc-ril.so
-vendor/lib64/libmtkmipc-rilop.so:vendor/lib64/libmtkmipc-rilop.so
+#vendor/lib64/libmtkmipc-ril.so:vendor/lib64/libmtkmipc-ril.so
+#vendor/lib64/libmtkmipc-rilop.so:vendor/lib64/libmtkmipc-rilop.so
 vendor/lib64/libmtknetcap.so:vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so:vendor/lib64/libmtknetutils.so
 vendor/lib64/libmtkperf_client_vendor.so:vendor/lib64/libmtkperf_client_vendor.so
@@ -1801,10 +1801,10 @@ vendor/lib64/libmvpu_clc_mvpu_elf.so:vendor/lib64/libmvpu_clc_mvpu_elf.so
 vendor/lib64/libmvpu_clc_mvpu_utility.so:vendor/lib64/libmvpu_clc_mvpu_utility.so
 vendor/lib64/libmvpu_clc_vpu_isa.so:vendor/lib64/libmvpu_clc_vpu_isa.so
 vendor/lib64/libmvpu_config.so:vendor/lib64/libmvpu_config.so
-vendor/lib64/libmvpu_engine.so:vendor/lib64/libmvpu_engine.so
-vendor/lib64/libmvpu_engine_25.so:vendor/lib64/libmvpu_engine_25.so
-vendor/lib64/libmvpu_engine_25_pub.so:vendor/lib64/libmvpu_engine_25_pub.so
-vendor/lib64/libmvpu_engine_pub.so:vendor/lib64/libmvpu_engine_pub.so
+#vendor/lib64/libmvpu_engine.so:vendor/lib64/libmvpu_engine.so
+#vendor/lib64/libmvpu_engine_25.so:vendor/lib64/libmvpu_engine_25.so
+#vendor/lib64/libmvpu_engine_25_pub.so:vendor/lib64/libmvpu_engine_25_pub.so
+#vendor/lib64/libmvpu_engine_pub.so:vendor/lib64/libmvpu_engine_pub.so
 vendor/lib64/libmvpu_pattern.so:vendor/lib64/libmvpu_pattern.so
 vendor/lib64/libmvpu_pattern_25.so:vendor/lib64/libmvpu_pattern_25.so
 vendor/lib64/libmvpu_pattern_25_pub.so:vendor/lib64/libmvpu_pattern_25_pub.so
@@ -1833,7 +1833,7 @@ vendor/lib64/libntcamcore.so:vendor/lib64/libntcamcore.so
 vendor/lib64/libntcamera2ndk_vendor_v2.so:vendor/lib64/libntcamera2ndk_vendor_v2.so
 vendor/lib64/libntcamextened.so:vendor/lib64/libntcamextened.so
 vendor/lib64/libntcammetadata.so:vendor/lib64/libntcammetadata.so
-vendor/lib64/libntcampipepb.so:vendor/lib64/libntcampipepb.so
+#vendor/lib64/libntcampipepb.so:vendor/lib64/libntcampipepb.so
 vendor/lib64/libntcamselector.so:vendor/lib64/libntcamselector.so
 vendor/lib64/libntcamthread.so:vendor/lib64/libntcamthread.so
 vendor/lib64/libnxp_extamp_intf.so:vendor/lib64/libnxp_extamp_intf.so
