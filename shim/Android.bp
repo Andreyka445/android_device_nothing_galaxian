@@ -1,7 +1,6 @@
-cc_library_shared {
-    name: "libshim_camera",
-    srcs: [
-        "libshim_camera.c",
-    ],
-    vendor: true
+cc_library {
+    name: "libcamera_metadata_ntshim",
+    shared_libs: ["libcamera_metadata"],
+    srcs: ["camera_metadata.cpp"],
+    vendor: true,
 }
