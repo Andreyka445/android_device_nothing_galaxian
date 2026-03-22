@@ -1,0 +1,67 @@
+<compatibility-matrix version="8.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.modem</name>
+        <version>2</version>
+        <interface><name>IRadioModem</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.network</name>
+        <version>2</version>
+        <interface><name>IRadioNetwork</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.sim</name>
+        <version>2</version>
+        <interface><name>IRadioSim</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.voice</name>
+        <version>2</version>
+        <interface><name>IRadioVoice</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.aee</name>
+        <version>1.1</version>
+        <interface><name>IAee</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.aee</name>
+        <version>1</version>
+        <interface><name>IAee</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.apuware.apusys</name>
+        <version>3</version>
+        <interface><name>INeuronApusys</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.mmlpq</name>
+        <version>3</version>
+        <interface><name>IMmlpq</name><regex-instance>.*</regex-instance></interface>
+    </hal>
+
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.apmonitor</name><interface><name>IApmService</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.apuware.utils</name><interface><name>IApuwareUtils</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.atci</name><interface><name>IAtcid</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.audio</name><interface><name>IMtkAudio</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.camera.atms</name><interface><name>IATMs</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.camera.bgservice</name><interface><name>IBGService</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.camera.isphal</name><interface><name>IISPModule</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.composer_ext</name><interface><name>IComposerExt</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.dmc</name><interface><name>IDmcService</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.gnss</name><interface><name>IMtkGnss</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.log</name><interface><name>ILog</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.mdmonitor</name><interface><name>IMDMonitorService</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.mmagent</name><interface><name>IMMAgent</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.mtkpower</name><interface><name>IMtkPowerService</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.mtkradioex.data</name><version>2</version><interface><name>IMtkRadioExData</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.mtkradioex.dch</name><interface><name>IMtkRadioExDc</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.mtkradioex.modem</name><version>2</version><interface><name>IMtkRadioExModem</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.netdagent</name><interface><name>INetdagents</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.nvram</name><interface><name>INvram</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.pq_aidl</name><version>7</version><interface><name>IPictureQuality_AIDL</name><regex-instance>.*</regex-instance></interface></hal>
+    <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.videotelephony</name><interface><name>IVideoTelephony</name><regex-instance>.*</regex-instance></interface></hal>
+</compatibility-matrix>

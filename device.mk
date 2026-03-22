@@ -13,9 +13,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -92,7 +89,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # API levels
-PRODUCT_SHIPPING_API_LEVEL := 35
+PRODUCT_SHIPPING_API_LEVEL := 34
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -101,8 +98,6 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
@@ -133,7 +128,7 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
     hardware/google/pixel \
     hardware/mediatek/libmtkperf_client \
     hardware/google/interfaces
@@ -197,10 +192,11 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service-lazy \
     hostapd \
-    wpa_supplicant \
-    libwifi-hal
+    wpa_supplicant
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/sku/,$(TARGET_COPY_OUT_ODM)/etc)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/nothing/galaxian/galaxian-vendor.mk)
