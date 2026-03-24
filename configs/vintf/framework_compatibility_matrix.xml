@@ -43,6 +43,24 @@
         <interface><name>IMmlpq</name><regex-instance>.*</regex-instance></interface>
     </hal>
 
+<hal format="aidl" optional="true">
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
+        <version>1</version>
+        <interface>
+            <name>IGoodixFingerprintDaemon</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
+    <hal format="aidl" optional="true">
+        <name>vendor.noth.hardware.sensor.sensor_extension</name>
+        <version>1</version>
+        <interface>
+            <name>ISensorExtension</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
     <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.apmonitor</name><interface><name>IApmService</name><regex-instance>.*</regex-instance></interface></hal>
     <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.apuware.utils</name><interface><name>IApuwareUtils</name><regex-instance>.*</regex-instance></interface></hal>
     <hal format="aidl" optional="true"><name>vendor.mediatek.hardware.atci</name><interface><name>IAtcid</name><regex-instance>.*</regex-instance></interface></hal>
