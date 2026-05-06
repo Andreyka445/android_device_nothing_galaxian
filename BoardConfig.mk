@@ -46,6 +46,11 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/mo
 BOARD_VENDOR_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_dlkm/, \
     $(notdir $(BOARD_VENDOR_KERNEL_MODULES_LOAD))))
 
+# Load vendor_dlkm modules
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_dlkm/, \
+    $(notdir $(BOARD_VENDOR_KERNEL_MODULES_LOAD))))
+
 # Load vendor_boot modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.vendor_boot))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_boot/, \
@@ -59,6 +64,11 @@ BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES := $(addprefix $(TARGET_MODULES_DIR
 # Append recovery modules if they're not already in vendor_boot
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(filter-out $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES), \
     $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES))
+
+# Load system_dlkm modules
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.system_dlkm))
+BOARD_SYSTEM_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/system_dlkm/, \
+    $(notdir $(BOARD_SYSTEM_KERNEL_MODULES_LOAD))))
 
 # Display
 TARGET_SCREEN_DENSITY := 420
