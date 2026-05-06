@@ -148,15 +148,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/mediatek \
-    hardware/google/pixel \
-    hardware/mediatek/libmtkperf_client \
-    hardware/mediatek/wlan/wifi_hal \
-    hardware/google/interfaces
-
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
     libperfctl_vendor \
@@ -362,10 +353,11 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH) \
+    $(LOCAL_PATH) \
     hardware/mediatek \
     hardware/google/pixel \
     hardware/mediatek/libmtkperf_client \
+    hardware/mediatek/wlan/wifi_hal \
     hardware/google/interfaces
 
 # Thermal
