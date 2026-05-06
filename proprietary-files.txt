@@ -616,15 +616,8 @@ vendor/lib64/libwa_widelens_undistort.so:vendor/lib64/libwa_widelens_undistort.s
 vendor/etc/camera/Algomark/AJensonPro-Semibold.otf:vendor/etc/camera/Algomark/AJensonPro-Semibold.otf
 vendor/etc/camera/anc_yuv_svq/supervq_model:vendor/etc/camera/anc_yuv_svq/supervq_model
 vendor/etc/camera/anc_yuv_svq/svq_cache:vendor/etc/camera/anc_yuv_svq/svq_cache
-vendor/etc/camera/assets/filter_aifeiertieta/content.json:vendor/etc/camera/assets/filter_aifeiertieta/content.json
-vendor/etc/camera/assets/filter_aifeiertieta/effect_content.json:vendor/etc/camera/assets/filter_aifeiertieta/effect_content.json
-vendor/etc/camera/assets/filter_aifeiertieta/filter.png:vendor/etc/camera/assets/filter_aifeiertieta/filter.png
-vendor/etc/camera/assets/filter_aifeiertieta/filter_effect3.fs:vendor/etc/camera/assets/filter_aifeiertieta/filter_effect3.fs
-vendor/etc/camera/assets/filter_aifeiertieta/params.json:vendor/etc/camera/assets/filter_aifeiertieta/params.json
-vendor/etc/camera/assets/filter_boli/hsl.vert:vendor/etc/camera/assets/filter_boli/hsl.vert
-vendor/etc/camera/assets/filter_boli/len.frag:vendor/etc/camera/assets/filter_boli/len.frag
 vendor/etc/camera/M_Rater_Defect_v1.0.14_arm64_ppl3.model:vendor/etc/camera/M_Rater_Defect_v1.0.14_arm64_ppl3.model
-vendor/etc/camera/Ndot-55.otf:vendor/etc/camera/Ndot-55.otf
+system/fonts/Ndot-55.otf:system/fonts/Ndot-55.otf
 vendor/etc/camera/Vega_Align_occlusion_106_13.17.12_fp16_arm64.model:vendor/etc/camera/Vega_Align_occlusion_106_13.17.12_fp16_arm64.model
 vendor/etc/camera/Vega_Detect_CommonFace_Gray_4.13.2_fp16_arm64.model:vendor/etc/camera/Vega_Detect_CommonFace_Gray_4.13.2_fp16_arm64.model
 vendor/etc/camera/Vega_Detect_CommonFace_Gray_keep_fix_1.3.0_fp16_arm64.model:vendor/etc/camera/Vega_Detect_CommonFace_Gray_keep_fix_1.3.0_fp16_arm64.model
@@ -974,32 +967,6 @@ vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal.so
 vendor/etc/wifi/p2p_supplicant_overlay.conf:vendor/etc/wifi/p2p_supplicant_overlay.conf
 
 # Miscellaneous
-odm/etc/manufacture/mmi/test_items.xml:odm/etc/manufacture/mmi/test_items.xml
-odm/etc/sysconfig/sku_EEA/eea_v2_search_chrome.xml:odm/etc/sysconfig/sku_EEA/eea_v2_search_chrome.xml
-odm/etc/sysconfig/sku_IND/dse_choice_screen.xml:odm/etc/sysconfig/sku_IND/dse_choice_screen.xml
-odm/etc/sysconfig/sku_TUR/qsb_widget.xml:odm/etc/sysconfig/sku_TUR/qsb_widget.xml
-odm/etc/sysconfig/sku_TUR/tmada.xml:odm/etc/sysconfig/sku_TUR/tmada.xml
-odm/etc/vintf/manifest_EEA.xml:odm/etc/vintf/manifest_EEA.xml
-odm/etc/vintf/manifest_IND.xml:odm/etc/vintf/manifest_IND.xml
-odm/etc/vintf/manifest_JPN.xml:odm/etc/vintf/manifest_JPN.xml
-odm/etc/vintf/manifest_ROW.xml:odm/etc/vintf/manifest_ROW.xml
-odm/etc/vintf/manifest_TUR.xml:odm/etc/vintf/manifest_TUR.xml
-odm/etc/build_EEA.prop:odm/etc/build_EEA.prop
-odm/etc/build_IND.prop:odm/etc/build_IND.prop
-odm/etc/build_JPN.prop:odm/etc/build_JPN.prop
-odm/etc/build_TUR.prop:odm/etc/build_TUR.prop
-odm/overlayfs_origin/product/media/bootanimation.zip
-odm/overlayfs_origin/system/noth/app/Facebook-Appmanager/facebook-appmanager.apk
-odm/overlayfs_origin/system/noth/priv-app/Facebook-Installer/facebook-installer.apk
-odm/overlayfs_origin/system/noth/priv-app/Facebook-Services/facebook-services.apk
-odm/overlayfs_origin/system_ext/ldu/app/LiveDemo.apk
-odm/overlayfs_origin/system_ext/meta/app/facebook.apk
-odm/overlayfs_origin/system_ext/meta/app/instagram.apk
-odm/overlayfs_origin/system_ext/noth/priv-app/FPS/FPS.apk
-odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/Conf_MultipleTest_0x44.ini
-odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/Conf_MultipleTest_0xda.ini
-odm/overlayfs_origin/system_ext/noth/priv-app/FT_Terminal_Test_Galaga/FT_Terminal_Test_Galaga.apk
-odm/overlayfs_origin/system_ext/noth/priv-app/GFLincoln/GFLincoln.apk
 vendor/app/NetworkStackGoogleGoResOverlay/NetworkStackGoogleGoResOverlay.apk:vendor/app/NetworkStackGoogleGoResOverlay/NetworkStackGoogleGoResOverlay.apk
 vendor/app/NetworkStackGoogleResOverlay/NetworkStackGoogleResOverlay.apk:vendor/app/NetworkStackGoogleResOverlay/NetworkStackGoogleResOverlay.apk
 vendor/app/NetworkStackResOverlay/NetworkStackResOverlay.apk:vendor/app/NetworkStackResOverlay/NetworkStackResOverlay.apk
@@ -1012,8 +979,6 @@ vendor/etc/aac/ID08-2_6kHz.txt:vendor/etc/aac/ID08-2_6kHz.txt
 vendor/etc/aac/ID09-2_6kHz.txt:vendor/etc/aac/ID09-2_6kHz.txt
 vendor/etc/advance_thermal_mitigation/atmc.json:vendor/etc/advance_thermal_mitigation/atmc.json
 vendor/etc/advance_thermal_mitigation/atmc_ind.json:vendor/etc/advance_thermal_mitigation/atmc_ind.json
-vendor/etc/apdb/APDB_MT6878___W2452:vendor/etc/apdb/APDB_MT6878___W2452
-vendor/etc/apdb/APDB_MT6878___W2452_ENUM:vendor/etc/apdb/APDB_MT6878___W2452_ENUM
 vendor/etc/bpf/info:vendor/etc/bpf/info
 vendor/etc/displayconfig/display_id_4627039422300187648.xml:vendor/etc/displayconfig/display_id_4627039422300187648.xml
 vendor/etc/felica/common.cfg:vendor/etc/felica/common.cfg
@@ -1040,7 +1005,6 @@ vendor/etc/init/nfc-service-nxp.rc:vendor/etc/init/nfc-service-nxp.rc
 vendor/etc/init/nfc-service-tms.rc:vendor/etc/init/nfc-service-tms.rc
 vendor/etc/init/nt_high_freq_sensor_tool.rc:vendor/etc/init/nt_high_freq_sensor_tool.rc
 vendor/etc/init/nt_mrdump.rc:vendor/etc/init/nt_mrdump.rc
-vendor/etc/init/nt_performance.rc:vendor/etc/init/nt_performance.rc
 vendor/etc/init/nt_zramwriteback.rc:vendor/etc/init/nt_zramwriteback.rc
 vendor/etc/init/secure_element-service-nxp.rc:vendor/etc/init/secure_element-service-nxp.rc
 vendor/etc/init/tee.rc:vendor/etc/init/tee.rc
@@ -1953,7 +1917,6 @@ vendor/etc/ecc_list_preference.xml:vendor/etc/ecc_list_preference.xml
 vendor/etc/fachwinfocfg:vendor/etc/fachwinfocfg
 vendor/etc/first_zramwriteback.fstab:vendor/etc/first_zramwriteback.fstab
 vendor/etc/fstab.emmc:vendor/etc/fstab.emmc
-vendor/etc/fstb.cfg:vendor/etc/fstb.cfg
 vendor/etc/genshin.dla:vendor/etc/genshin.dla
 vendor/etc/hal_uuid_map_config.xml:vendor/etc/hal_uuid_map_config.xml
 vendor/etc/ics_sfdc.cfg:vendor/etc/ics_sfdc.cfg
