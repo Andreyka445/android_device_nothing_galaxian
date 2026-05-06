@@ -154,6 +154,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/google/pixel \
     hardware/mediatek/libmtkperf_client \
+    hardware/mediatek/wlan/wifi_hal \
     hardware/google/interfaces
 
 PRODUCT_PACKAGES += \
