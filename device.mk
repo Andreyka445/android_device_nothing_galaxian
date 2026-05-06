@@ -151,6 +151,7 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/mediatek \
     hardware/google/pixel \
     hardware/mediatek/libmtkperf_client \
     hardware/google/interfaces
