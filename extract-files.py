@@ -19,8 +19,6 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/nothing/galaxian',
-    'vendor/nothing/galaxian',
-    'hardware/nothing',
     'hardware/mediatek',
 ]
 
