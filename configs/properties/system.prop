@@ -106,7 +106,6 @@ pm.dexopt.post-boot=verify
 pm.dexopt.shared=speed
 qemu.hw.mainkeys=0
 ro.actionable_compatible_property.enabled=true
-ro.allow.mock.location=0
 ro.base_build=noah
 ro.boot.hardware.sku=NXP-NFC
 ro.build.backported_fixes.alias_bitset.long_list=2

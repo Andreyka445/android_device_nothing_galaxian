@@ -267,7 +267,6 @@ ro.netflix.bsp_rev=MT6878-38373-1
 
 # Media
 debug.stagefright.c2inputsurface=-1
-media.c2.dmabuf.padding=3072
 
 # Radio
 persist.radio.multisim.config=dsds
