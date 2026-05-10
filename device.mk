@@ -3,6 +3,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+STRICT_VINTF_CHECK := false
+PRODUCT_HIDL_CHECK_CHAIN_LEVEL := false
+TARGET_NO_VIBRATOR := false
+
 DEVICE_PATH := device/nothing/galaxian
 
 # Enable updating of APEXes
@@ -232,11 +236,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
-# WiFi
-PRODUCT_PACKAGES += \
-    hostapd \
-    wpa_supplicant
-
 # Fingerprint
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -295,7 +294,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.lineage
+    android.hardware.light-service.galaxian
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -356,8 +355,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/mediatek \
     hardware/google/pixel \
-    hardware/mediatek/libmtkperf_client \
-    hardware/mediatek/wlan/wifi_hal \
     hardware/google/interfaces
 
 # Thermal
@@ -373,27 +370,17 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
 
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common-V6-ndk
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
 # Vibrator
-$(call soong_config_set, vibrator, vibratortargets, vibratoraidlV2target)
-$(call soong_config_set,qti_vibrator,use_effect_stream,true)
-$(call soong_config_set,qti_vibrator,use_effect_stream_strength,true)
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.impl \
-    vendor.qti.hardware.vibrator.service
+    android.hardware.vibrator.service.galaxian-richtap
 
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-
-# WiFi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
-    hostapd \
-    wpa_supplicant \
-    libwifi-hal-wrapper
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi) \
