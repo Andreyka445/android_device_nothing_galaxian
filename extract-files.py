@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+import re
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -17,6 +19,67 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
+BAD_LIBS = [
+    "libgralloctypes",
+    "libgpud",
+    "libpixelflinger",
+    "android.hardware.graphics.common-V7-ndk",
+    "android.hardware.graphics.common-V4-ndk",
+    "android.hardware.graphics.common-V3-ndk",
+    "android.hardware.graphics.allocator-V2-ndk",
+    "android.hardware.graphics.composer3-V2-ndk",
+    "android.hardware.audio.common-V2-ndk",
+    "android.hardware.bluetooth.audio-V3-ndk",
+    "vendor.mediatek.hardware.camera.isphal-V1-ndk",
+    "android.hardware.wifi.supplicant-V1-ndk",
+    "android.hardware.wifi.supplicant-V2-ndk",
+    "android.hardware.wifi.supplicant-V3-ndk",
+    "vendor.noth.hardware.wifi.hostapd-V1-ndk",
+    "vendor.noth.hardware.wifi.supplicant-V1-ndk",
+    "android.hardware.sensors-V1-ndk",
+    "android.hardware.sensors-V2-ndk",
+    "android.hardware.sensors-V3-ndk",
+    "android.frameworks.sensorservice-V1-ndk",
+    "android.frameworks.sensorservice-V2-ndk",
+    "vendor.mediatek.hardware.pq_aidl-V1-ndk",
+    "vendor.mediatek.hardware.pq_aidl-V2-ndk",
+    "android.hardware.graphics.allocator-V1-ndk",
+    "android.hardware.graphics.allocator-V2-ndk",
+    "android.hardware.graphics.allocator-V3-ndk",
+    "android.hardware.graphics.allocator-V4-ndk",
+]
+
+def post_process(path):
+    if not os.path.exists(path):
+        return
+
+    with open(path, 'r') as f:
+        content = f.read()
+
+    content = re.sub(
+        r'(cc_prebuilt_library_shared|cc_prebuilt_binary)\s*\{',
+        r'\1 {\n    check_elf_files: false,\n    allow_undefined_symbols: true,',
+        content
+    )
+
+    content = content.replace('"libsink"', '"libsink-mtk"')
+
+    lines = content.splitlines()
+    fixed_lines = []
+    
+    for line in lines:
+        should_skip = False
+        for bad_lib in BAD_LIBS:
+            if f'"{bad_lib}"' in line and "name:" not in line:
+                should_skip = True
+                break
+        
+        if not should_skip:
+            fixed_lines.append(line)
+
+    with open(path, 'w') as f:
+        f.write("\n".join(fixed_lines))
+
 namespace_imports = [
     'device/nothing/galaxian',
     'hardware/mediatek',
@@ -25,10 +88,15 @@ namespace_imports = [
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
+def lib_fixup_libsink(lib: str, partition: str, *args, **kwargs):
+    if lib == 'libsink':
+        return 'libsink-mtk'
+    return None
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     'vendor.mediatek.hardware.videotelephony-v1-ndk': lib_fixup_vendor_suffix,
+    'libsink': lib_fixup_libsink,
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -125,7 +193,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libsilkybrightnesscore.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
-}  # fmt: skip
+}
 
 module = ExtractUtilsModule(
     'galaxian',
@@ -137,3 +205,4 @@ module = ExtractUtilsModule(
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
     utils.run()
+    post_process(f'../../../vendor/{module.vendor}/{module.device}/Android.bp')

@@ -296,6 +296,9 @@ vendor/lib64/mt6878/libpqparamparser.so:vendor/lib64/libpqparamparser.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
 vendor/lib64/libcamalgo.dngop.so
 vendor/lib64/mt6878/libfeature.face.so:vendor/lib64/libfeature.face.so
+vendor/lib64/libmtkcam_perfctrl.so
+vendor/lib64/libmtkcam_imgbuf_v2.so
+vendor/lib64/libmtkcam_grallocutils.so
 
 # Audio configs
 system/etc/audio_effects.conf:system/etc/audio_effects.conf
@@ -605,6 +608,7 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
+vendor/lib64/libmtkcam_grallocutils_aidlv1helper.so
 
 # Camera configs
 vendor/etc/camera/Algomark/AJensonPro-Semibold.otf:vendor/etc/camera/Algomark/AJensonPro-Semibold.otf
@@ -986,11 +990,22 @@ vendor/lib64/libaacvibrator.so:vendor/lib64/libaacvibrator.so
 vendor/lib64/libics_haptic.so:vendor/lib64/libics_haptic.so
 
 # Wi-Fi
-vendor/lib64/libkeystore-engine-wifi-hidl.so:vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal.so
+vendor/bin/wlan_assistant
+vendor/bin/wmt_launcher
+vendor/bin/wmt_loader
+vendor/etc/init/init.wlan_drv.rc
+vendor/etc/init/wlan_assistant.rc
+vendor/lib64/libkeystore-engine-wifi-hidl.so
+vendor/lib64/libwifi-hal.so
+vendor/lib64/vendor.noth.hardware.wifi.hostapd-V1-ndk.so
+vendor/lib64/vendor.noth.hardware.wifi.supplicant-V1-ndk.so
 
 # Wi-Fi configs
-vendor/etc/wifi/p2p_supplicant_overlay.conf:vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/nvram/wfnv_desc_data_soc70.bin
+vendor/etc/wifi/nvram/wfnv_desc_map_soc70.bin
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Miscellaneous
 vendor/app/NetworkStackGoogleGoResOverlay/NetworkStackGoogleGoResOverlay.apk:vendor/app/NetworkStackGoogleGoResOverlay/NetworkStackGoogleGoResOverlay.apk
