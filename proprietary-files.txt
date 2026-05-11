@@ -1924,7 +1924,6 @@ vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml:vendor/etc/vintf/ma
 vendor/etc/vintf/manifest/manifest_mmlpq.xml:vendor/etc/vintf/manifest/manifest_mmlpq.xml
 vendor/etc/vintf/manifest/mapper.mediatek.xml:vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/etc/vintf/manifest/mtkgnss-batching.xml:vendor/etc/vintf/manifest/mtkgnss-batching.xml
-vendor/etc/vintf/manifest/power-mediatek.xml:vendor/etc/vintf/manifest/power-mediatek.xml
 vendor/etc/AbnormalDisplayLog_dynamic.xml:vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/AudioDump_dynamic.xml:vendor/etc/AudioDump_dynamic.xml
 vendor/etc/AudioLog_dynamic.xml:vendor/etc/AudioLog_dynamic.xml
