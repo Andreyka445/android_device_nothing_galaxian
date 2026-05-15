@@ -13,7 +13,6 @@ INTF_IGNORE_DEPRECATED_HALS := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 DEVICE_PATH := device/nothing/galaxian
-TARGET_MODULES_DIR := $(DEVICE_PATH)/modules
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
@@ -44,30 +43,6 @@ TARGET_CPU_VARIANT := cortex-a76
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := Galaxian
 TARGET_NO_BOOTLOADER := true
-
-# Load vendor_dlkm modules
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load))
-BOARD_VENDOR_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_dlkm/, \
-    $(notdir $(BOARD_VENDOR_KERNEL_MODULES_LOAD))))
-
-# Load vendor_boot modules
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.vendor_boot))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/vendor_boot/, \
-    $(notdir $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))))
-
-# Load recovery modules (also from vendor_boot)
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.recovery))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES := $(addprefix $(TARGET_MODULES_DIR)/vendor_boot/, \
-    $(notdir $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)))
-
-# Append recovery modules if they're not already in vendor_boot
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(filter-out $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES), \
-    $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES))
-
-# Load system_dlkm modules
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_MODULES_DIR)/modules.load.system_dlkm))
-BOARD_SYSTEM_KERNEL_MODULES := $(sort $(addprefix $(TARGET_MODULES_DIR)/system_dlkm/, \
-    $(notdir $(BOARD_SYSTEM_KERNEL_MODULES_LOAD))))
 
 # Display
 TARGET_SCREEN_DENSITY := 420
@@ -106,6 +81,20 @@ BOARD_BOOTCONFIG += androidboot.serialconsole=0 androidboot.selinux=permissive
 
 BOARD_USES_VENDOR_DLKMIMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+
+# Kernel modules
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.system))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.vendor))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.ramdisk))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.ramdisk_recovery))
+ALL_VENDOR_RAMDISK_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD) $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+
+BOARD_SYSTEM_KERNEL_MODULE_DIR := $(KERNEL_PATH)/system
+BOARD_VENDOR_KERNEL_MODULE_DIR := $(KERNEL_PATH)/vendor
+
+BOARD_SYSTEM_KERNEL_MODULES := $(addprefix $(BOARD_SYSTEM_KERNEL_MODULE_DIR)/,$(BOARD_SYSTEM_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(BOARD_VENDOR_KERNEL_MODULE_DIR)/,$(BOARD_VENDOR_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(BOARD_VENDOR_KERNEL_MODULE_DIR)/,$(ALL_VENDOR_RAMDISK_MODULES))
 
 BOARD_VENDOR_KERNEL_MODULES += \
     $(DEVICE_PATH)/modules/vendor_dlkm/cmdq-test.ko \
