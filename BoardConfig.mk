@@ -68,19 +68,16 @@ TARGET_PREBUILT_KERNEL_HEADERS := $(KERNEL_PATH)/kernel-uapi-headers.tar.gz
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 BOARD_MKBOOTIMG_ARGS += \
-    --base $(BOARD_KERNEL_BASE) \
-    --dtb_offset $(BOARD_TAGS_OFFSET) \
     --header_version $(BOARD_BOOT_HEADER_VERSION) \
-    --kernel_offset $(BOARD_KERNEL_OFFSET) \
     --pagesize $(BOARD_KERNEL_PAGESIZE) \
-    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-    --tags_offset $(BOARD_TAGS_OFFSET)
+    --dtb $(BOARD_PREBUILT_DTBIMAGE_DIR)/mt6878.dtb
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 log_buf_len=1M sysctl.kernel.sched_pelt_multiplier=4
 BOARD_BOOTCONFIG += androidboot.serialconsole=0 androidboot.selinux=permissive
 
 BOARD_USES_VENDOR_DLKMIMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_BOOTCONFIG_VERSION := 1
 
 # Kernel modules
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.system))
@@ -97,14 +94,14 @@ BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(BOARD_VENDOR_KERNEL_MODULE_DIR)/,$(
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(BOARD_VENDOR_KERNEL_MODULE_DIR)/,$(ALL_VENDOR_RAMDISK_MODULES))
 
 BOARD_VENDOR_KERNEL_MODULES += \
-    $(DEVICE_PATH)/modules/vendor_dlkm/cmdq-test.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/emi-fake-eng.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/eph861.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/fmradio_drv_connac2x.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/ft3683g.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/gps_pwr.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/gps_scp.ko \
-    $(DEVICE_PATH)/modules/vendor_dlkm/tui-common.ko
+    $(KERNEL_PATH)/vendor/cmdq-test.ko \
+    $(KERNEL_PATH)/vendor/emi-fake-eng.ko \
+    $(KERNEL_PATH)/vendor/eph861.ko \
+    $(KERNEL_PATH)/vendor/fmradio_drv_connac2x.ko \
+    $(KERNEL_PATH)/vendor/ft3683g.ko \
+    $(KERNEL_PATH)/vendor/gps_pwr.ko \
+    $(KERNEL_PATH)/vendor/gps_scp.ko \
+    $(KERNEL_PATH)/vendor/tui-common.ko
     
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -153,7 +150,7 @@ TARGET_VENDOR_PROP += $(CONFIGS_PATH)/properties/vendor.prop
 TARGET_ODM_PROP += $(CONFIGS_PATH)/properties/odm.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.emmc
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6878
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -209,10 +206,8 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 # Confing vendorboot
 BOARD_USES_RECOVERY_AS_BOOT := false
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE :=
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT :=
-TW_LOAD_VENDOR_BOOT_MODULES := true
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 
 # WIFI

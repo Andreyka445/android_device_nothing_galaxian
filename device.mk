@@ -12,13 +12,36 @@ DEVICE_PATH := device/nothing/galaxian
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
 # Ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
+# A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=erofs \
+    POSTINSTALL_OPTIONAL_vendor=true
+
 PRODUCT_PACKAGES += \
+    checkpoint_gc \
+    otapreopt_script
+
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES += \
+    create_pl_dev \
+    create_pl_dev.recovery
+
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -131,15 +154,14 @@ PRODUCT_CHARACTERISTICS := default
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.emmc
+    fstab.mt6878
 
-# Fstab
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/fstab.emmc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.emmc \
-    $(LOCAL_PATH)/init/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/init/fstab.mt6878:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt6878 \
+    $(LOCAL_PATH)/init/fstab.mt6878:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.mt6878
 
 PRODUCT_PACKAGES += \
-    fstab.emmc \
+    fstab.mt6878 \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6878.rc \
@@ -148,9 +170,6 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.sensor_2_0.rc \
     ueventd.mt6878.rc 
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
 
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
